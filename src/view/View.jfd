@@ -40,7 +40,7 @@ new FormModel {
 				"value": "Center"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 455 )
+			"location": new java.awt.Point( 0, 235 )
 			"size": new java.awt.Dimension( 430, 295 )
 		} )
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
@@ -54,6 +54,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JToggleButton" ) {
 					name: "missionButton"
 					"text": "Mission"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "missionButtonMouseClicked", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "textField1"
@@ -90,7 +91,7 @@ new FormModel {
 				"value": "Center"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 455, 240 )
+			"location": new java.awt.Point( 0, 595 )
 			"size": new java.awt.Dimension( 820, 505 )
 		} )
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
@@ -98,7 +99,7 @@ new FormModel {
 			"$sizePolicy": 1
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {seq l {space :p:46:p, par l {seq {space :6:6:p, comp descriptionLabel:::p:245:p}, comp welcomeLabel:::p:261:p, seq l {space :p:8:p, comp beginButton:::p:237:p}}, space ::51:x}}"
-				"$verticalGroup": "par l {seq {space :::p, comp welcomeLabel:::p:52:p, space :::p, comp descriptionLabel:::p::p, space :p:12:p, comp beginButton:::p::p, space ::43:x}}"
+				"$verticalGroup": "par l {seq {space :::p, comp welcomeLabel:::p:52:p, space :::p, comp descriptionLabel:::p::p, space :p:12:p, comp beginButton:::p::p, space ::13:x}}"
 			} ) {
 				name: "firstPagePane"
 				add( new FormComponent( "javax.swing.JTextArea" ) {
@@ -125,7 +126,7 @@ new FormModel {
 				"value": "Center"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 145, 0 )
+			"location": new java.awt.Point( 10, 0 )
 			"size": new java.awt.Dimension( 360, 225 )
 		} )
 	}

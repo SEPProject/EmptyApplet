@@ -2,6 +2,7 @@ package model;
 
 import controller.*;
 import java.io.File;
+import java.util.ArrayList;
 
 
 public class Model implements ModelBehaviour {
@@ -9,6 +10,7 @@ public class Model implements ModelBehaviour {
     public Controller controller;
     public File worstList;
     private PasswordManager passManager;
+    private ArrayList<Mission> appletMissions ;
 
     public Model(){
         init();
@@ -17,6 +19,7 @@ public class Model implements ModelBehaviour {
     public void init(){
             worstList = new File("./data/worstList.txt");
             passManager = new PasswordManager();
+            appletMissions = new ArrayList<Mission>();
     }
 
     public File getWorstList() {
@@ -38,14 +41,15 @@ public class Model implements ModelBehaviour {
         return worstList;
     }
 
+    @Override
     public PasswordManager getPasswordManager(){
         return passManager;
     }
 
-
-
-
-
+    @Override
+    public ArrayList<Mission> getMission(){
+        return appletMissions;
+    }
 
 
 }

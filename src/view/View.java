@@ -49,10 +49,16 @@ public class View implements ViewBehaviour {
         mainPage.setVisible(true);
     }
 
+    private void missionButtonMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        System.out.println("*** missionButton pressed ***");
+        missionDialog.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - fgd efeg
-        missionDialog = new JDialog();
+        missionDialog = new Dialog();
         missionPanel = new JPanel();
         missionLabel = new JLabel();
         missionAssessment = new JTextArea();
@@ -162,6 +168,12 @@ public class View implements ViewBehaviour {
 
                 //---- missionButton ----
                 missionButton.setText("Mission");
+                missionButton.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        missionButtonMouseClicked(e);
+                    }
+                });
 
                 //---- button1 ----
                 button1.setText("add word to dictionnary");
@@ -306,7 +318,7 @@ public class View implements ViewBehaviour {
                             .addComponent(descriptionLabel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(12, 12, 12)
                             .addComponent(beginButton)
-                            .addContainerGap(43, Short.MAX_VALUE))
+                            .addContainerGap(13, Short.MAX_VALUE))
                 );
             }
             firstPageContentPane.add(firstPagePane, BorderLayout.CENTER);
