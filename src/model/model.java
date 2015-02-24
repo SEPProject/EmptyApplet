@@ -1,29 +1,29 @@
 package model;
 
-import controller.*;
-import java.io.File;
-import java.util.ArrayList;
+import controller.Controller;
 
 
 public class Model implements ModelBehaviour {
 
     public Controller controller;
-    public File worstList;
-    private PasswordManager passManager;
-    private ArrayList<Mission> appletMissions ;
+    private Mission appletMission;
+
+    public Mission getAppletMission() {
+        return appletMission;
+    }
+
+    public void setAppletMission(Mission appletMission) {
+        this.appletMission = appletMission;
+    }
+
+    private String description;
 
     public Model(){
         init();
     }
 
     public void init(){
-            worstList = new File("./data/worstList.txt");
-            passManager = new PasswordManager();
-            appletMissions = new ArrayList<Mission>();
-    }
-
-    public File getWorstList() {
-        return worstList;
+        appletMission = new Mission();
     }
 
     @Override
@@ -36,20 +36,21 @@ public class Model implements ModelBehaviour {
         return this.controller;
     }
 
+
     @Override
-    public File getFile(){
-        return worstList;
+    public Mission getMission(){
+        return appletMission;
+    }
+
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 
     @Override
-    public PasswordManager getPasswordManager(){
-        return passManager;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
-    @Override
-    public ArrayList<Mission> getMission(){
-        return appletMissions;
-    }
-
 
 }

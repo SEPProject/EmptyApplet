@@ -1,12 +1,12 @@
 package model;
-import controller.*;
-import java.io.*;
-import java.util.ArrayList;
+import controller.Controller;
 
 public interface ModelBehaviour {
+
     public Controller getController();
     public void setController(Controller c);
-    public File getFile();
-    public PasswordManager getPasswordManager();
-    public ArrayList<Mission> getMission();
+    public Mission getMission();
+    public String getDescription();
+    public void setDescription(String description);
+
 }
